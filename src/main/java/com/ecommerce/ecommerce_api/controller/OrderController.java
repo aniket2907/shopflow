@@ -3,6 +3,7 @@ package com.ecommerce.ecommerce_api.controller;
 import com.ecommerce.ecommerce_api.dto.OrderResponse;
 import com.ecommerce.ecommerce_api.dto.PlaceOrderRequest;
 import com.ecommerce.ecommerce_api.service.OrderService;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/api/orders")
 @RequiredArgsConstructor
+@SecurityRequirement(name = "bearerAuth")
 public class OrderController {
 
     private final OrderService orderService;
